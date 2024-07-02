@@ -9,6 +9,7 @@ import {
 import { Controller } from "../../interfaces/controller";
 import { DateValidator } from "../../interfaces/dateValidator";
 import { AddTask } from "../../../usecases/addTask";
+import { error } from "console";
 
 export class AddTaskController implements Controller {
   constructor(
@@ -34,6 +35,7 @@ export class AddTaskController implements Controller {
       }
 
       const task = await this.addTask.add({ title, description, date });
+
       return created(task);
     } catch (error: any) {
       return serverError(error);
