@@ -5,7 +5,6 @@ export interface AddATaskModel {
   description: string;
   date: string;
 }
-
 export interface AddTask {
   add(task: AddATaskModel): Promise<Task>;
 }
